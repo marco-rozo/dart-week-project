@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "826850584413",
+    "project_id": "app-filmes-marco",
+    "storage_bucket": "app-filmes-marco.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826850584413:android:1053c7429737d680e4aab4",
+        "android_client_info": {
+          "package_name": "br.com.marcorozo.app_filmes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826850584413-1s9uofq4abui5a7u2rde4hk9g0qlkg8q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.marcorozo.app_filmes",
+            "certificate_hash": "7a8fa43e9ab494a54765c14803c781ebdef3db9b"
+          }
+        },
+        {
+          "client_id": "826850584413-i0splicacvu2hsb8ecaf4k2o08fihju9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMbx4IYUBTbeNfCY4qgN1V87-YWAZz1mk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826850584413-i0splicacvu2hsb8ecaf4k2o08fihju9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
