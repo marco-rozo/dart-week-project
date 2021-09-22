@@ -1,3 +1,4 @@
+import 'package:app_filmes/application/ui/filmes_app_ui_config.dart';
 import 'package:app_filmes/modules/splash/splash_module.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
@@ -21,12 +22,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: FilmesAppUIConfig.title,
       debugShowCheckedModeBanner: false,
       initialBinding: ApplicationBindings(),
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: FilmesAppUIConfig.theme,
+      darkTheme: ThemeData.dark(),
+      color: Colors.purple,
       getPages: [
         ...SplashModule().routers,
         ...LoginModule().routers,
