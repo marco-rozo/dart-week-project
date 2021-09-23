@@ -9,7 +9,7 @@ class FavoritePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Favoritos', style: TextStyle(color: Color(0xff222222)),),
+        title: Text('Favoritos',),
       ),
       body: Text('Favoritos page'),
     );
