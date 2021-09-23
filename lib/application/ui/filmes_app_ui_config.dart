@@ -13,6 +13,7 @@ class FilmesAppUIConfig{
       appBarTheme: AppBarTheme(
         centerTitle: true,
         backgroundColor: Colors.white,
+        backwardsCompatibility: false,
         iconTheme: IconThemeData(color: Colors.black),
         titleTextStyle: TextStyle(
           color: Color(0xff222222),
