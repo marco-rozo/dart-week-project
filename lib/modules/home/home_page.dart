@@ -1,6 +1,7 @@
 import 'package:app_filmes/application/ui/filme_app_icons_icons.dart';
 import 'package:app_filmes/modules/favorites/favorites_page.dart';
 import 'package:app_filmes/modules/home/home_controller.dart';
+import 'package:app_filmes/modules/movies/movies_bindings.dart';
 import 'package:app_filmes/modules/movies/movies_page.dart';
 import 'package:flutter/material.dart';
 import 'package:app_filmes/application/ui/theme_extensions.dart';
@@ -19,18 +20,11 @@ class HomePage extends GetView<HomeController> {
           onTap: controller.goToPage,
           currentIndex: controller.pageIndex,
           items: [
+            BottomNavigationBarItem(icon: Icon(Icons.movie), label: 'Filmes'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.movie),
-                label: 'Filmes'
-            ),
+                icon: Icon(FilmeAppIcons.heart_empty), label: 'Favoritos'),
             BottomNavigationBarItem(
-                icon: Icon(FilmeAppIcons.heart_empty),
-                label: 'Favoritos'
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.logout_outlined),
-                label: 'Sair'
-            ),
+                icon: Icon(Icons.logout_outlined), label: 'Sair'),
           ],
         );
       }),
@@ -39,7 +33,7 @@ class HomePage extends GetView<HomeController> {
         key: Get.nestedKey(HomeController.NAVIGATOR_KEY),
         onGenerateRoute: (settings) {
           if (settings.name == '/movies') {
-            return GetPageRoute(settings: settings, page: () => MoviesPage());
+            return GetPageRoute(settings: settings, page: () => MoviesPage(), binding: MoviesBindings());
           }
           if (settings.name == '/favorites') {
             return GetPageRoute(settings: settings, page: () => FavoritePage());
