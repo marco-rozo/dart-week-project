@@ -1,8 +1,9 @@
+import 'package:app_filmes/modules/movies/movies_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MoviesHeader extends StatelessWidget {
+class MoviesHeader extends GetView<MoviesController> {
   const MoviesHeader({Key? key}) : super(key: key);
 
   @override
@@ -21,6 +22,8 @@ class MoviesHeader extends StatelessWidget {
             width: Get.width * .9,
             padding: EdgeInsets.only(bottom: 20),
             child: TextField(
+              //resgata o valor escrito e passa para a função de filtro da controller
+              onChanged: (value) => controller.filterByName(value),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),

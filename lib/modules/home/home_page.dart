@@ -1,4 +1,5 @@
 import 'package:app_filmes/application/ui/filme_app_icons_icons.dart';
+import 'package:app_filmes/modules/favorites/favorites_bindings.dart';
 import 'package:app_filmes/modules/favorites/favorites_page.dart';
 import 'package:app_filmes/modules/home/home_controller.dart';
 import 'package:app_filmes/modules/movies/movies_bindings.dart';
@@ -33,10 +34,18 @@ class HomePage extends GetView<HomeController> {
         key: Get.nestedKey(HomeController.NAVIGATOR_KEY),
         onGenerateRoute: (settings) {
           if (settings.name == '/movies') {
-            return GetPageRoute(settings: settings, page: () => MoviesPage(), binding: MoviesBindings());
+            return GetPageRoute(
+              settings: settings,
+              page: () => MoviesPage(),
+              binding: MoviesBindings(),
+            );
           }
           if (settings.name == '/favorites') {
-            return GetPageRoute(settings: settings, page: () => FavoritePage());
+            return GetPageRoute(
+              settings: settings,
+              page: () => FavoritePage(),
+              binding: FavoritesBindings(),
+            );
           }
 
           return null;

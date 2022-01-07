@@ -14,7 +14,6 @@ class LoginController extends GetxController with LoaderMixin, MessagesMixin{
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     loaderListener(loading);
     messageListener(message);

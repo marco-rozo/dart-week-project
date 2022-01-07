@@ -1,4 +1,3 @@
-import 'package:app_filmes/modules/login/logn_bindings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
