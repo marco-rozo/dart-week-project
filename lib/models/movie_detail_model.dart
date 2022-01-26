@@ -53,17 +53,21 @@ class MovieDetailModel {
       return '${parts[0].padLeft(2, '0')}h${parts[1].padLeft(2, '0')}';
     }
 
-    var urlImagesPosters = map['images']['posters'];
-    var urlImages = urlImagesPosters?.map((i) => 'https://image.tmdb.org/t/p/w200${i['file_path']}').toList() ?? [];
-    //if(urlImages.length == 0) {
-    List<dynamic> poster = [];
-    poster.add('https://image.tmdb.org/t/p/w200${map['poster_path']}');
+    List urlImagesPosters = map['images']['posters'];
+    var urlImages = [];
+    if(urlImagesPosters.isNotEmpty){
+       urlImagesPosters.map((i) => urlImages.add('https://image.tmdb.org/t/p/w200${i['file_path']}')).toList();
+    } else{
+      urlImages.add('https://image.tmdb.org/t/p/w200${map['poster_path']}');
+    }
+
+
 
     return MovieDetailModel(
       title: map['title'] ?? '',
       stars: map['vote_average']?.toDouble() ?? 0.0,
       genres: List<GenreModel>.from(map['genres']?.map((x) => GenreModel.fromMap(x)) ?? const []),
-      urlImages: urlImages.length > 0 ? urlImages : poster,
+      urlImages: urlImages,
       releaseDate: DateTime.parse(map['release_date']),
       overview: map['overview'] ?? '',
       productionCompanies: List<dynamic>.from(map['production_companies'] ?? const []).map<String>((p) => p['name']).toList(),

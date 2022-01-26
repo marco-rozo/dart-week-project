@@ -9,11 +9,9 @@ class MovieDetailHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var movieData = movie;
+    var movieData;
+    movieData = movie;
 
-    print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-    print(movieData?.urlImages);
-    print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
     if (movieData != null && movieData.urlImages.length > 0) {
       return SizedBox(
         height: 278,
@@ -22,13 +20,10 @@ class MovieDetailHeader extends StatelessWidget {
           itemCount: movieData.urlImages.length,
           itemBuilder: (context, index) {
             final image = movieData.urlImages[index];
-            print('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb');
-            print(movieData.urlImages);
-            print('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb');
             return Padding(
               padding: EdgeInsets.all(2.0),
               child: CachedNetworkImage(
-                imageUrl: image ?? 'https://via.placeholder.com/278',
+                imageUrl: image,
                 placeholder: (context, url) => SizedBox(
                   height: 278,
                   width: 278,

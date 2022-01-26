@@ -18,7 +18,7 @@ class MovieCast extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: CachedNetworkImage(
-                imageUrl: cast?.image ?? 'https://via.placeholder.com/85',
+                imageUrl: '${cast!.image}',
                 placeholder: (context, url) => SizedBox(
                   height: 85,
                   width: 85,

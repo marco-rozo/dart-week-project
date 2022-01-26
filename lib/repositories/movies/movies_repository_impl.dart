@@ -106,6 +106,7 @@ class MoviesRepositoryImpl implements MoviesRepository {
       }
     } on Exception catch (e) {
       print('Erro ao favoritar filme');
+      print(e);
       rethrow;
     }
   }

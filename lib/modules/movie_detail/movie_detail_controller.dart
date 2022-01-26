@@ -30,7 +30,6 @@ class MovieDetailController extends GetxController with LoaderMixin, MessagesMix
       final movieDetailData = await _moviesService.getDetail(movieId);
       movie.value = movieDetailData;
 
-      print(movieDetailData?.urlImages);
       loading(false);
       
     } on Exception catch (e, s) {
